@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
@@ -79,6 +80,23 @@ namespace API.Controllers
       }
 
       return BadRequest("Problem saving palette");
+    }
+
+    // DELETE - api/delete-palette/:id
+    [HttpDelete("delete-palette/{paletteId}")]
+    public async Task<ActionResult> DeletePalette(int paletteId)
+    {
+      var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
+
+      var palette = user.Palettes.FirstOrDefault(x => x.Id == paletteId);
+
+      if (palette == null) return NotFound();
+
+      user.Palettes.Remove(palette);
+
+      if (await _unitOfWork.Complete()) return Ok();
+
+      return BadRequest("Failed to delete the palette");
     }
   }
 }
