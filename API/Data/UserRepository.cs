@@ -38,6 +38,7 @@ namespace API.Data
     public async Task<AppUser> GetUserByUsernameAsync(string username)
     {
       return await _context.Users
+      .Include(user => user.Palettes)
       .SingleOrDefaultAsync(user => user.UserName == username);
     }
 
