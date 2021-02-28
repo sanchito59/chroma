@@ -11,6 +11,7 @@ namespace API.Entities
     public DateTime LastActive { get; set; } = DateTime.Now;
     public string City { get; set; }
     public string Country { get; set; }
+    public string FavoriteColor { get; set; }
     public ICollection<AppUserRole> UserRoles { get; set; }
   }
 }
