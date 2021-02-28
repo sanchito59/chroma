@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTOs;
+using API.Extensions;
 using API.Interfaces;
 using AutoMapper;
 // using Microsoft.AspNetCore.Authorization;
@@ -33,6 +34,20 @@ namespace API.Controllers
     public async Task<ActionResult<MemberDto>> GetUser(string username)
     {
       return await _unitOfWork.UserRepository.GetMemberAsync(username);
+    }
+
+    // PUT user - api/users
+    [HttpPut]
+    public async Task<ActionResult<MemberDto>> UpdateUser(MemberUpdateDto memberUpdateDto)
+    {
+      var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
+
+      _mapper.Map(memberUpdateDto, user);
+      _unitOfWork.UserRepository.Update(user);
+
+      if (await _unitOfWork.Complete()) return NoContent();
+
+      return BadRequest("Failed to update user");
     }
   }
 }
