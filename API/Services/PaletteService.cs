@@ -12,7 +12,7 @@ namespace API.Services
     }
     public string Generate255Int()
     {
-      return (_random.Next(0, 255)).ToString();
+      return (_random.Next(0, 256)).ToString();
     }
   }
 }
