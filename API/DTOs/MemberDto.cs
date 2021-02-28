@@ -15,6 +15,6 @@ namespace API.DTOs
     public string Country { get; set; }
     public string FavoriteColor { get; set; }
 
-    // public ICollection<PaletteDto> Palettes { get; set; }
+    public ICollection<PaletteDto> Palettes { get; set; }
   }
 }
