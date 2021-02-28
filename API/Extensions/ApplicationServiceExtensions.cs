@@ -18,6 +18,9 @@ namespace API.Extensions
       services.AddScoped<LogUserActivity>();
       services.AddScoped<IUnitOfWork, UnitOfWork>();
       services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+      services.AddControllersWithViews().AddNewtonsoftJson(options =>
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+      );
       services.AddDbContext<DataContext>(options =>
     {
       var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
