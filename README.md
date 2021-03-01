@@ -1,11 +1,11 @@
-Backend API
+Backend API (In Development)
 
 * C#
 * Entity Framework
 * PostgreSQL
 * Docker image for local DB
 
-Frontend Client (TODO)
+Frontend Client (In Development)
 
 * Angular
 * Material UI

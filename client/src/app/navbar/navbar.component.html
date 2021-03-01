@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Chroma</span>
+    <span class="nav-spacer"></span>
+    <span *ngIf="(accountService.currentUser$ | async) as user">
+      <button mat-icon-button aria-label="Toggle logged in user menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </span>
+    <div class="example-container" *ngIf="(accountService.currentUser$ | async) === null">
+      <form (ngSubmit)="login()" #loginForm="ngForm" autocomplete="off">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" name="username" [(ngModel)]="model.username">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="model.password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-button type="submit">Login</button>
+      </form>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
