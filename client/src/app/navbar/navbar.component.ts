@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
 
   login() {
     this.accountService.login(this.model).subscribe(res => {
-      console.log(res, this.model)
       this.router.navigateByUrl('/');
     })
   }

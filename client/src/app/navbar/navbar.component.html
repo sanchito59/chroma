@@ -8,12 +8,12 @@
       </button>
 
       <mat-menu #userSettingMenu="matMenu">
-        <button mat-menu-item (click)="logout()">Logout</button>
-        <button mat-menu-item>Future Edit Profile Section</button>
-        <button mat-menu-item>Future My Palettes</button>
+        <button mat-menu-item (click)="logout()">Logout <mat-icon>logout</mat-icon></button>
+        <button mat-menu-item>TODO: Edit Profile</button>
+        <button mat-menu-item>TODO: My Palettes</button>
       </mat-menu>
     </span>
-    <div class="example-container" *ngIf="(accountService.currentUser$ | async) === null">
+    <div class="login-container" *ngIf="(accountService.currentUser$ | async) === null">
       <form (ngSubmit)="login()" #loginForm="ngForm" autocomplete="off">
         <mat-form-field appearance="fill">
           <mat-label>Username</mat-label>
