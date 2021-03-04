@@ -1,0 +1,16 @@
+<mat-form-field>
+  <input matInput type={{type}} placeholder={{label}} [formControl]="ngControl.control"
+    [class.is-invalid]="ngControl.touched && ngControl.invalid">
+  <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">
+    Please enter a {{label}}
+  </div>
+  <div *ngIf="ngControl.control.errors?.minlength" class="invalid-feedback">
+    {{label}} must be at least {{ngControl.errors.minlength['requiredLength']}} characters
+  </div>
+  <div *ngIf="ngControl.control.errors?.maxlength" class="invalid-feedback">
+    {{label}} must be no more than {{ngControl.errors.maxlength['requiredLength']}} characters
+  </div>
+  <div *ngIf="ngControl.control.errors?.isMatching" class="invalid-feedback">
+    Passwords do not match
+  </div>
+</mat-form-field>

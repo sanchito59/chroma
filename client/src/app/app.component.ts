@@ -9,6 +9,7 @@ import { AccountService } from 'src/app/_services/account.service';
 })
 export class AppComponent implements OnInit {
   title = 'Chroma';
+  registerMode = false;
 
   constructor(private accountService: AccountService) {}
 
@@ -22,5 +23,13 @@ export class AppComponent implements OnInit {
     if (user) {
       this.accountService.setCurrentUser(user);
     }
+  }
+
+  registerToggle() {
+    this.registerMode = !this.registerMode;
+  }
+
+  cancelRegisterMode(event: boolean) {
+    this.registerMode = event;
   }
 }

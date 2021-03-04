@@ -14,12 +14,14 @@ import { MatFormFieldModule  } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { TextInputComponent } from './text-input/text-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
