@@ -36,6 +36,16 @@ export class AccountService {
     this.currentUserSource.next(user);
   }
 
+  register(model: any) {
+    return this.http.post(`${this.baseUrl}account/register`, model).pipe(
+      map((user: User) => {
+        if (user) {
+          this.setCurrentUser(user);
+        }
+      })
+    )
+  }
+
   logout() {
     localStorage.removeItem('chromaUser');
     this.currentUserSource.next(null);
