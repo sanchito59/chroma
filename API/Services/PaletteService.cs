@@ -8,7 +8,7 @@ namespace API.Services
 
     public string GenerateColor()
     {
-      return "rgb(" + Generate255Int() + ", " + Generate255Int() + ", " + Generate255Int() + ");";
+      return "rgb(" + Generate255Int() + ", " + Generate255Int() + ", " + Generate255Int() + ");"; // TODO: Proper string interpolation
     }
     public string Generate255Int()
     {

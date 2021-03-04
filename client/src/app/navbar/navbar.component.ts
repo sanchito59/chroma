@@ -9,7 +9,7 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavbarComponent implements OnInit {
   model: any = {};
-  hide = true;
+  hidePassword = true;
 
   constructor(public accountService: AccountService, private router: Router) { }
 
