@@ -13,11 +13,13 @@ import { MatButtonModule  } from '@angular/material/button';
 import { MatFormFieldModule  } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
