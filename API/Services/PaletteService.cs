@@ -1,8 +1,9 @@
 using System;
+using API.Interfaces;
 
 namespace API.Services
 {
-  public class PaletteService
+  public class PaletteService : IPaletteService
   {
     private readonly Random _random = new Random();
 
