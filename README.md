@@ -12,4 +12,11 @@ Frontend Client (In Development)
 
 Production (TODO)
 
-* Azure or Heroku (leaning Azure)
+* Azure
+
+--- 
+
+# To Run:
+
+* from "./API/": `dotnet watch run` to start the backend API
+* from "./client/": `ng serve` to start the frontend client
