@@ -48,5 +48,4 @@ export class RegistrationComponent implements OnInit {
   cancel() {
     this.cancelRegistration.emit(false);
   }
-
 }

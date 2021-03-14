@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'Chroma';
   registerMode = false;
 
-  constructor(private accountService: AccountService) {}
+  constructor(public accountService: AccountService) {}
 
   ngOnInit(): void {
     this.setCurrentUser();

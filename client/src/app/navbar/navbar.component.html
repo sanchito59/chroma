@@ -15,12 +15,12 @@
     </span>
     <div class="login-container" *ngIf="(accountService.currentUser$ | async) === null">
       <form (ngSubmit)="login()" #loginForm="ngForm" autocomplete="off">
-        <mat-form-field appearance="fill">
+        <mat-form-field>
           <mat-label>Username</mat-label>
           <input matInput type="text" name="username" [(ngModel)]="model.username">
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field>
           <mat-label>Enter your password</mat-label>
           <input matInput [type]="hidePassword ? 'password' : 'text'" name="password" [(ngModel)]="model.password">
           <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
