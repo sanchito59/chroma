@@ -17,6 +17,7 @@ namespace API.Extensions
       services.AddScoped<ITokenService, TokenService>();
       services.AddScoped<LogUserActivity>();
       services.AddScoped<IUnitOfWork, UnitOfWork>();
+      services.AddScoped<IPaletteService, PaletteService>();
       services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
       services.AddControllersWithViews().AddNewtonsoftJson(options =>
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

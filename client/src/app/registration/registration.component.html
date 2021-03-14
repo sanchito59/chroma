@@ -1,0 +1,26 @@
+<form [formGroup]="registrationForm" (ngSubmit)="registrationForm.valid && register()" autocomplete="off">
+  <h2>SIGN UP</h2>
+  <app-text-input [formControl]='registrationForm.controls["username"]' [label]='"Username"'></app-text-input>
+  <app-text-input [formControl]='registrationForm.controls["knownAs"]' [label]='"Known As"'></app-text-input>
+  <app-text-input [formControl]='registrationForm.controls["city"]' [label]='"City"'></app-text-input>
+  <app-text-input [formControl]='registrationForm.controls["country"]' [label]='"Country"' [type]='"text"'>
+  </app-text-input>
+  <app-text-input [formControl]='registrationForm.controls["favoriteColor"]' [label]='"favoriteColor"' [type]='"text"'>
+  </app-text-input>
+  <!-- TODO ^^^: color picker package, type, or custom built -->
+  <app-text-input [formControl]='registrationForm.controls["password"]' [label]='"Password"' [type]='"password"'>
+  </app-text-input>
+  <app-text-input [formControl]='registrationForm.controls["confirmPassword"]' [label]='"Confirm Password"'
+    [type]='"password"'></app-text-input>
+
+  <div class="row" *ngIf="validationErrors.length > 0">
+    <ul class="text-danger">
+      <li *ngFor="let err of validationErrors">{{err}}</li>
+    </ul>
+  </div>
+
+  <div>
+    <button mat-button type="submit" [disabled]="!registrationForm.valid">Register</button>
+    <button mat-button type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

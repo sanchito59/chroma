@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<div style="justify-content: center; display: flex; margin-top: 40px;"
+  *ngIf="(accountService.currentUser$ | async) === null">
+  <mat-card style="width: 75%;">
+    <button mat-button (click)="registerToggle()">Register?</button>
+    <app-registration (cancelRegistration)="cancelRegisterMode($event)" *ngIf="registerMode"></app-registration>
+  </mat-card>
+</div>
