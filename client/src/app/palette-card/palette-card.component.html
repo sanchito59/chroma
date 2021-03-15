@@ -1,12 +1,14 @@
 <mat-card>
-  <mat-card-title>
+  <mat-card-title routerLink="/palettes/{{palette.id}}">
     {{palette.title}}
   </mat-card-title>
+  <button routerLink="/palettes/{{palette.id}}">CLICK</button>
   <div style="display: flex;">
-    <div [style.background]="palette.color1" style="width: 20%; height: 80px;"></div>
-    <div [style.background]="palette.color2" style="width: 20%; height: 80px;"></div>
-    <div [style.background]="palette.color3" style="width: 20%; height: 80px;"></div>
-    <div [style.background]="palette.color4" style="width: 20%; height: 80px;"></div>
-    <div [style.background]="palette.color5" style="width: 20%; height: 80px;"></div>
+    <!-- TODO: WIDTH - responsiveness -->
+    <div [style.background]="palette.color1" style="width: 80px; height: 120px;"></div>
+    <div [style.background]="palette.color2" style="width: 80px; height: 120px;"></div>
+    <div [style.background]="palette.color3" style="width: 80px; height: 120px;"></div>
+    <div [style.background]="palette.color4" style="width: 80px; height: 120px;"></div>
+    <div [style.background]="palette.color5" style="width: 80px; height: 120px;"></div>
   </div>
 </mat-card>

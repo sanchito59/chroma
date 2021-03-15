@@ -17,4 +17,8 @@ export class PaletteService {
   getAllPalettes() {
     return this.http.get<Palette[]>(`${this.baseUrl}palettes`);
   }
+
+  getPalette(id: string) {
+    return this.http.get<Palette>(`${this.baseUrl}palettes/${id}`);
+  }
 }

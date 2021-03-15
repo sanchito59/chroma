@@ -12,11 +12,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card'; 
 import { MatButtonModule  } from '@angular/material/button'; 
 import { MatFormFieldModule  } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TextInputComponent } from './text-input/text-input.component';
 import { PaletteCardComponent } from './palette-card/palette-card.component';
+import { PaletteDetailComponent } from './palette-detail/palette-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { PaletteCardComponent } from './palette-card/palette-card.component';
     NavbarComponent,
     RegistrationComponent,
     TextInputComponent,
-    PaletteCardComponent
+    PaletteCardComponent,
+    PaletteDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { PaletteCardComponent } from './palette-card/palette-card.component';
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatGridListModule,
     MatInputModule,
   ],
   providers: [],
