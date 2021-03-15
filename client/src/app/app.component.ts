@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
 
     this.paletteService.getAllPalettes().subscribe(res => {
       this.palettes = res;
+      this.loading = false;
     })
   }
 

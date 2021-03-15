@@ -16,13 +16,15 @@ import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TextInputComponent } from './text-input/text-input.component';
+import { PaletteCardComponent } from './palette-card/palette-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegistrationComponent,
-    TextInputComponent
+    TextInputComponent,
+    PaletteCardComponent
   ],
   imports: [
     BrowserModule,

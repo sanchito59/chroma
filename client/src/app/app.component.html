@@ -6,3 +6,8 @@
     <app-registration (cancelRegistration)="cancelRegisterMode($event)" *ngIf="registerMode"></app-registration>
   </mat-card>
 </div>
+<div *ngIf="!loading">
+  <div style="justify-content: center; display: flex; margin-top: 40px;" *ngFor="let palette of palettes">
+    <app-palette-card [palette]="palette"></app-palette-card>
+  </div>
+</div>
