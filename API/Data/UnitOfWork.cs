@@ -15,6 +15,7 @@ namespace API.Data
     }
 
     public IUserRepository UserRepository => new UserRepository(_context, _mapper);
+    public IPaletteRepository PaletteRepository => new PaletteRepository(_context, _mapper);
 
     public async Task<bool> Complete()
     {
