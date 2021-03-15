@@ -17,6 +17,11 @@ namespace API.Data
       _context = context;
     }
 
+    public async Task<Palette> GetPaletteAsync(int id)
+    {
+      return await _context.Palettes.FindAsync(id);
+    }
+
     public async Task<IEnumerable<Palette>> GetPalettesAsync()
     {
       return await _context.Palettes.ToListAsync();
