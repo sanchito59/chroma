@@ -13,9 +13,8 @@ export class PaletteDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log('send help');
     this.route.data.subscribe(data => {
-      this.palette = data.palette;
+      this.palette = data.PaletteDetailResolver;
     });
   }
 }

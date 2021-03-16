@@ -1,0 +1,8 @@
+.card-wrapper {
+  transition: 0.3s;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+}
