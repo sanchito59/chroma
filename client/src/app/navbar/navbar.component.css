@@ -2,6 +2,15 @@
   flex: 1 1 auto;
 }
 
+.main-brand {
+  transition: 0.15s linear;
+}
+
+.main-brand:hover {
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+
 /* LOGIN FORM */
 
 .login-container .mat-form-field+.mat-form-field {

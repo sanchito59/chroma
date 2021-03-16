@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Chroma</span>
+    <span routerLink='/' class="main-brand">Chroma</span>
     <span class="nav-spacer"></span>
     <span *ngIf="(accountService.currentUser$ | async) as user">
       <button mat-icon-button aria-label="Toggle logged in user menu" [matMenuTriggerFor]="userSettingMenu">
