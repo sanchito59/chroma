@@ -19,6 +19,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { TextInputComponent } from './text-input/text-input.component';
 import { PaletteCardComponent } from './palette-card/palette-card.component';
 import { PaletteDetailComponent } from './palette-detail/palette-detail.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PaletteDetailComponent } from './palette-detail/palette-detail.componen
     RegistrationComponent,
     TextInputComponent,
     PaletteCardComponent,
-    PaletteDetailComponent
+    PaletteDetailComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
