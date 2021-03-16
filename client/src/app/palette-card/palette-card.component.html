@@ -1,0 +1,15 @@
+<div routerLink="/palettes/{{palette.id}}" class="card-wrapper">
+  <mat-card>
+    <mat-card-title>
+      {{palette.title}}
+    </mat-card-title>
+    <div style="display: flex;">
+      <!-- TODO: WIDTH - responsiveness -->
+      <div [style.background]="palette.color1" style="width: 80px; height: 120px;"></div>
+      <div [style.background]="palette.color2" style="width: 80px; height: 120px;"></div>
+      <div [style.background]="palette.color3" style="width: 80px; height: 120px;"></div>
+      <div [style.background]="palette.color4" style="width: 80px; height: 120px;"></div>
+      <div [style.background]="palette.color5" style="width: 80px; height: 120px;"></div>
+    </div>
+  </mat-card>
+</div>

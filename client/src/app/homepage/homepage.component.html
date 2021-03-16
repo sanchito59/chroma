@@ -1,0 +1,16 @@
+<div style="justify-content: center; display: flex; margin-top: 40px;"
+  *ngIf="(accountService.currentUser$ | async) === null">
+  <mat-card style="width: 75%;">
+    <button mat-button (click)="registerToggle()">Register?</button>
+    <app-registration (cancelRegistration)="cancelRegisterMode($event)" *ngIf="registerMode"></app-registration>
+  </mat-card>
+</div>
+<div *ngIf="!loading">
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <div style="justify-content: center;" *ngFor="let palette of palettes">
+      <mat-grid-tile>
+        <app-palette-card [palette]="palette"></app-palette-card>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>

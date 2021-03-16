@@ -12,17 +12,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card'; 
 import { MatButtonModule  } from '@angular/material/button'; 
 import { MatFormFieldModule  } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TextInputComponent } from './text-input/text-input.component';
+import { PaletteCardComponent } from './palette-card/palette-card.component';
+import { PaletteDetailComponent } from './palette-detail/palette-detail.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegistrationComponent,
-    TextInputComponent
+    TextInputComponent,
+    PaletteCardComponent,
+    PaletteDetailComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,7 @@ import { TextInputComponent } from './text-input/text-input.component';
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatGridListModule,
     MatInputModule,
   ],
   providers: [],
