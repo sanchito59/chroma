@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Palette } from '../_models/Palette';
-import { NewPalette } from '../_models/NewPalette';
+import { DisplayPalette } from '../_models/DisplayPalette';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,11 @@ export class PaletteService {
     return this.http.get<Palette>(`${this.baseUrl}palettes/${id}`);
   }
 
-  createNewPalette(newPalette: NewPalette) {
-    return this.http.post(`${this.baseUrl}users/add-palette`, newPalette);
+  createNewPalette(newPalette: DisplayPalette) {
+    return this.http.post<DisplayPalette>(`${this.baseUrl}users/add-palette`, newPalette);
+  }
+
+  generateRandomPalette() {
+    return this.http.get<DisplayPalette>(`${this.baseUrl}palettes/random-palette`);
   }
 }

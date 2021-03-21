@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Palette } from '../_models/Palette';
+import { DisplayPalette } from '../_models/DisplayPalette';
 import { AccountService } from '../_services/account.service';
 import { PaletteService } from '../_services/palette.service';
 
@@ -11,12 +11,22 @@ import { PaletteService } from '../_services/palette.service';
 export class HomepageComponent implements OnInit {
   loading = false;
   registerMode = false;
-  palettes: Palette[];
+  palettes: DisplayPalette[];
+  randomPalette: DisplayPalette;
 
   constructor(public accountService: AccountService, private paletteService: PaletteService) { }
 
   ngOnInit(): void {
     this.loadPalettes();
+    this.generateRandomPalette();
+  }
+
+  registerToggle() {
+    this.registerMode = !this.registerMode;
+  }
+
+  cancelRegisterMode(event: boolean) {
+    this.registerMode = event;
   }
 
   loadPalettes(){
@@ -29,16 +39,16 @@ export class HomepageComponent implements OnInit {
   }
 
   createNewPalette() {
-    this.paletteService.createNewPalette({title: 'this is my title'}).subscribe(res => {
-      console.log(res);
+    this.paletteService.createNewPalette(this.randomPalette).subscribe((res) => {
+      this.palettes.unshift(res);
+      this.generateRandomPalette();
+    });
+  }
+
+  generateRandomPalette() {
+    this.paletteService.generateRandomPalette().subscribe(res => {
+      localStorage.setItem("randomPalette", JSON.stringify(res));
+      this.randomPalette = res;
     })
-  }
-
-  registerToggle() {
-    this.registerMode = !this.registerMode;
-  }
-
-  cancelRegisterMode(event: boolean) {
-    this.registerMode = event;
   }
 }
