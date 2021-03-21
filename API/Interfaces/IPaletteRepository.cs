@@ -8,5 +8,6 @@ namespace API.Interfaces
   {
     Task<IEnumerable<Palette>> GetPalettesAsync();
     Task<Palette> GetPaletteAsync(int id);
+    public Palette GenerateRandomPalette();
   }
 }

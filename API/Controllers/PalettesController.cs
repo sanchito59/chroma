@@ -35,5 +35,12 @@ namespace API.Controllers
     {
       return await _unitOfWork.PaletteRepository.GetPaletteAsync(id);
     }
+
+    // GET a random palette for frontend UI - api/palettes/random-palette
+    [HttpGet("random-palette")]
+    public Palette GenerateRandomPalette()
+    {
+      return _unitOfWork.PaletteRepository.GenerateRandomPalette();
+    }
   }
 }
