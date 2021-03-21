@@ -54,7 +54,7 @@ namespace API.Controllers
     }
 
     [HttpPost("add-palette")]
-    public async Task<ActionResult<PaletteDto>> AddPalette(CreatePaletteDto createPaletteDto) // TODO CreatePaletteDto will need inputs from the client
+    public async Task<ActionResult<PaletteDto>> AddPalette(CreatePaletteDto createPaletteDto)
     {
       var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
 
@@ -63,11 +63,11 @@ namespace API.Controllers
       var palette = new Palette
       {
         Title = createPaletteDto.Title,
-        Color1 = paletteGenerator.GenerateColor(),
-        Color2 = paletteGenerator.GenerateColor(),
-        Color3 = paletteGenerator.GenerateColor(),
-        Color4 = paletteGenerator.GenerateColor(),
-        Color5 = paletteGenerator.GenerateColor()
+        Color1 = createPaletteDto.Color1,
+        Color2 = createPaletteDto.Color2,
+        Color3 = createPaletteDto.Color3,
+        Color4 = createPaletteDto.Color4,
+        Color5 = createPaletteDto.Color5,
       };
 
       user.Palettes.Add(palette);
