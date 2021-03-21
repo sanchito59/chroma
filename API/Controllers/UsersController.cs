@@ -7,12 +7,12 @@ using API.Extensions;
 using API.Interfaces;
 using API.Services;
 using AutoMapper;
-// using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-  // [Authorize] TODO: Assess if this should be protected
+  [Authorize] // TODO: Assess if this should be protected
   public class UsersController : BaseApiController
   {
     private readonly IUnitOfWork _unitOfWork;
