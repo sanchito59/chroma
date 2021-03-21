@@ -19,7 +19,9 @@
     <mat-form-field>
       <input matInput type="text" placeholder="Palette title" [(ngModel)]="randomPalette.title">
     </mat-form-field>
-    <button mat-button color="primary" (click)="createNewPalette()" *ngIf="randomPalette.title">
+    <!-- TODO: Prompt user to register- save palette to localstorage for retrieval -->
+    <button mat-button color="primary" (click)="createNewPalette()"
+      *ngIf="(accountService.currentUser$ | async) && randomPalette.title">
       Save Palette
     </button>
   </div>
