@@ -5,6 +5,27 @@
     <app-registration (cancelRegistration)="cancelRegisterMode($event)" *ngIf="registerMode"></app-registration>
   </mat-card>
 </div>
+<div *ngIf="randomPalette">
+  <!-- TODO: tooltip w/ copy on click -->
+  <div style="display: flex;">
+    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color1"></div>
+    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color2"></div>
+    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color3"></div>
+    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color4"></div>
+    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color5"></div>
+  </div>
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <button mat-button color="primary" (click)="generateRandomPalette()">New Colors</button>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Palette title" [(ngModel)]="randomPalette.title">
+    </mat-form-field>
+    <!-- TODO: Prompt user to register- save palette to localstorage for retrieval -->
+    <button mat-button color="primary" (click)="createNewPalette()"
+      *ngIf="(accountService.currentUser$ | async) && randomPalette.title">
+      Save Palette
+    </button>
+  </div>
+</div>
 <div *ngIf="!loading">
   <mat-grid-list cols="3" rowHeight="2:1">
     <div style="justify-content: center;" *ngFor="let palette of palettes">
