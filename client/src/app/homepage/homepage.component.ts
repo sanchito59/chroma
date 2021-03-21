@@ -28,6 +28,12 @@ export class HomepageComponent implements OnInit {
     })
   }
 
+  createNewPalette() {
+    this.paletteService.createNewPalette({title: 'this is my title'}).subscribe(res => {
+      console.log(res);
+    })
+  }
+
   registerToggle() {
     this.registerMode = !this.registerMode;
   }
@@ -35,5 +41,4 @@ export class HomepageComponent implements OnInit {
   cancelRegisterMode(event: boolean) {
     this.registerMode = event;
   }
-
 }
