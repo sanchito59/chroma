@@ -7,4 +7,5 @@ export interface Palette {
   color4: string,
   color5: string,
   appUserId: number,
+  created: string,
 }

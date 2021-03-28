@@ -1,3 +1,4 @@
+using System;
 namespace API.DTOs
 {
   public class PaletteDto
@@ -9,5 +10,6 @@ namespace API.DTOs
     public string Color3 { get; set; }
     public string Color4 { get; set; }
     public string Color5 { get; set; }
+    public DateTime Created { get; set; }
   }
 }

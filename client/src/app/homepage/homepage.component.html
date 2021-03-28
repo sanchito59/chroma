@@ -6,13 +6,12 @@
   </mat-card>
 </div>
 <div *ngIf="randomPalette">
-  <!-- TODO: tooltip w/ copy on click -->
   <div style="display: flex;">
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color1"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color2"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color3"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color4"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color5"></div>
+    <app-new-palette-color [color]="randomPalette.color1" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color2" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color3" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color4" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color5" style="width: 100%;"></app-new-palette-color>
   </div>
   <div style="display: flex; justify-content: center; margin-top: 20px;">
     <button mat-button color="primary" (click)="generateRandomPalette()">New Colors</button>
@@ -28,10 +27,18 @@
 </div>
 <div *ngIf="!loading">
   <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-paginator [pageIndex]="pagination.currentPage - 1" [length]="pagination.totalItems"
+      [pageSize]="pagination.itemsPerPage" [pageSizeOptions]="[5, 10, 25, 100]" (page)="handlePageEvent($event)"
+      (click)="loadPalettes()">
+    </mat-paginator>
     <div style="justify-content: center;" *ngFor="let palette of palettes">
       <mat-grid-tile>
         <app-palette-card [palette]="palette"></app-palette-card>
       </mat-grid-tile>
     </div>
   </mat-grid-list>
+  <mat-paginator [pageIndex]="pagination.currentPage - 1" [length]="pagination.totalItems"
+    [pageSize]="pagination.itemsPerPage" [pageSizeOptions]="[5, 10, 25, 100]" (page)="handlePageEvent($event)"
+    (click)="loadPalettes()">
+  </mat-paginator>
 </div>

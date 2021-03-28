@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -22,9 +24,11 @@ namespace API.Controllers
 
     // GET all palettes - api/palettes
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<PaletteDto>>> GetPalettes()
+    public async Task<ActionResult<IEnumerable<PaletteDto>>> GetPalettes([FromQuery] UserParams userParams)
     {
-      var palettes = await _unitOfWork.PaletteRepository.GetPalettesAsync();
+      var palettes = await _unitOfWork.PaletteRepository.GetPalettesAsync(userParams);
+
+      Response.AddPaginationHeader(palettes.CurrentPage, palettes.PageSize, palettes.TotalCount, palettes.TotalPages);
 
       return Ok(palettes);
     }

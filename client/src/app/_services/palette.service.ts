@@ -1,22 +1,55 @@
 import { Injectable } from '@angular/core';
-// import { ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Palette } from '../_models/Palette';
 import { DisplayPalette } from '../_models/DisplayPalette';
+import { UserParams } from '../_models/UserParams';
+import { User } from '../_models/User';
+import { map, take } from 'rxjs/operators';
+import { AccountService } from './account.service';
+import { of } from 'rxjs';
+import { getPaginatedResults, getPaginationHeaders } from './paginationHelper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaletteService {
   baseUrl = environment.apiUrl;
-  // private paletteSource = new ReplaySubject<Palette>();
-  // palettes$ = this.paletteSource.asObservable();
+  palettes: Palette[] = [];
+  paletteCache = new Map();
+  user: User;
+  userParams: UserParams;
 
-  constructor(private http: HttpClient) { }
+  getUserParams = () => {
+    return this.userParams;
+  }
 
-  getAllPalettes() {
-    return this.http.get<Palette[]>(`${this.baseUrl}palettes`);
+  setUserParams = (params: UserParams) => {
+    this.userParams = params;
+  }
+
+  constructor(private http: HttpClient, private accountService: AccountService) {
+    this.accountService.currentUser$.pipe(take(1)).subscribe(user => {
+      this.user = user;
+    })
+
+    this.userParams = new UserParams();
+  }
+
+  getAllPalettes(userParams: UserParams) {
+    var response = this.paletteCache.get(Object.values(userParams).join('-'));
+
+    if (response) {
+      return of(response);
+    }
+
+    let params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
+
+    return getPaginatedResults<Palette[]>(`${this.baseUrl}palettes`, params, this.http)
+    .pipe(map(response => {
+      this.paletteCache.set(Object.values(userParams).join('-'), response);
+      return response;
+    }));
   }
 
   getPalette(id: string) {

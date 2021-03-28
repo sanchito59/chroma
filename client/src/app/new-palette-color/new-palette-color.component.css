@@ -1,0 +1,7 @@
+.palette-color {
+  height: 400px;
+}
+
+.palette-color:hover {
+  cursor: pointer;
+}
