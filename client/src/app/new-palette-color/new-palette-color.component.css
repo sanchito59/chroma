@@ -1,5 +1,6 @@
 .palette-color {
   height: 400px;
+  transition: background 0.325s ease-in-out;
 }
 
 .palette-color:hover {
