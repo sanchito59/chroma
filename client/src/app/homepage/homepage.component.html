@@ -6,13 +6,12 @@
   </mat-card>
 </div>
 <div *ngIf="randomPalette">
-  <!-- TODO: tooltip w/ copy on click -->
   <div style="display: flex;">
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color1"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color2"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color3"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color4"></div>
-    <div style="width: 20%; height: 400px;" [style.background]="randomPalette.color5"></div>
+    <app-new-palette-color [color]="randomPalette.color1" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color2" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color3" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color4" style="width: 100%;"></app-new-palette-color>
+    <app-new-palette-color [color]="randomPalette.color5" style="width: 100%;"></app-new-palette-color>
   </div>
   <div style="display: flex; justify-content: center; margin-top: 20px;">
     <button mat-button color="primary" (click)="generateRandomPalette()">New Colors</button>
