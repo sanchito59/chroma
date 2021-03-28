@@ -1,9 +1,13 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using API.DTOs;
 using API.Entities;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -23,9 +27,13 @@ namespace API.Data
       return await _context.Palettes.FindAsync(id);
     }
 
-    public async Task<IEnumerable<Palette>> GetPalettesAsync()
+    public async Task<PagedList<PaletteDto>> GetPalettesAsync(UserParams userParams)
     {
-      return await _context.Palettes.ToListAsync();
+      var paletteQuery = _context.Palettes.AsQueryable();
+      paletteQuery = paletteQuery.OrderByDescending(p => p.Created);
+
+      return await PagedList<PaletteDto>.CreateAsync(paletteQuery.ProjectTo<PaletteDto>(_mapper.ConfigurationProvider).AsNoTracking(), userParams.PageNumber, userParams.
+      PageSize);
     }
 
     public Palette GenerateRandomPalette()

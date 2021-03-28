@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DisplayPalette } from '../_models/DisplayPalette';
+import { Pagination } from '../_models/PaginatedResult';
+import { UserParams } from '../_models/UserParams';
 import { AccountService } from '../_services/account.service';
 import { PaletteService } from '../_services/palette.service';
 
@@ -13,8 +15,12 @@ export class HomepageComponent implements OnInit {
   registerMode = false;
   palettes: DisplayPalette[];
   randomPalette: DisplayPalette;
+  pagination: Pagination;
+  userParams: UserParams;
 
-  constructor(public accountService: AccountService, private paletteService: PaletteService) { }
+  constructor(public accountService: AccountService, private paletteService: PaletteService) {
+    this.userParams = this.paletteService.getUserParams();
+  }
 
   ngOnInit(): void {
     this.loadPalettes();
@@ -32,8 +38,9 @@ export class HomepageComponent implements OnInit {
   loadPalettes(){
     this.loading = true;
 
-    this.paletteService.getAllPalettes().subscribe(res => {
-      this.palettes = res;
+    this.paletteService.getAllPalettes(this.userParams).subscribe(res => {
+      this.palettes = res.result;
+      this.pagination = res.pagination;
       this.loading = false;
     })
   }

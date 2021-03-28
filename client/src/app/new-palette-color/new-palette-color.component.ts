@@ -10,8 +10,6 @@ export class NewPaletteColorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.color)
-  }
+  ngOnInit(): void { }
 
 }
