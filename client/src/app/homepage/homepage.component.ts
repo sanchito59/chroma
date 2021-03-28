@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { DisplayPalette } from '../_models/DisplayPalette';
 import { Pagination } from '../_models/PaginatedResult';
 import { UserParams } from '../_models/UserParams';
@@ -33,6 +34,11 @@ export class HomepageComponent implements OnInit {
 
   cancelRegisterMode(event: boolean) {
     this.registerMode = event;
+  }
+
+  handlePageEvent(event: PageEvent) {
+    this.userParams.pageNumber = event.pageIndex + 1;
+    this.userParams.pageSize = event.pageSize;
   }
 
   loadPalettes(){

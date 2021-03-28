@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule  } from '@angular/material/button'; 
 import { MatFormFieldModule  } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from '@angular/cdk/clipboard';
@@ -55,6 +56,7 @@ import { AppComponent } from './app.component';
     MatInputModule,
     MatTooltipModule,
     ClipboardModule,
+    MatPaginatorModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }

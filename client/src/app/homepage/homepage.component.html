@@ -27,10 +27,18 @@
 </div>
 <div *ngIf="!loading">
   <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-paginator [pageIndex]="pagination.currentPage - 1" [length]="pagination.totalItems"
+      [pageSize]="pagination.itemsPerPage" [pageSizeOptions]="[5, 10, 25, 100]" (page)="handlePageEvent($event)"
+      (click)="loadPalettes()">
+    </mat-paginator>
     <div style="justify-content: center;" *ngFor="let palette of palettes">
       <mat-grid-tile>
         <app-palette-card [palette]="palette"></app-palette-card>
       </mat-grid-tile>
     </div>
   </mat-grid-list>
+  <mat-paginator [pageIndex]="pagination.currentPage - 1" [length]="pagination.totalItems"
+    [pageSize]="pagination.itemsPerPage" [pageSizeOptions]="[5, 10, 25, 100]" (page)="handlePageEvent($event)"
+    (click)="loadPalettes()">
+  </mat-paginator>
 </div>
