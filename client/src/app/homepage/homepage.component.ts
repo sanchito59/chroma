@@ -5,6 +5,8 @@ import { Pagination } from '../_models/PaginatedResult';
 import { UserParams } from '../_models/UserParams';
 import { AccountService } from '../_services/account.service';
 import { PaletteService } from '../_services/palette.service';
+import { MatDialog } from '@angular/material/dialog';
+import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
 
 @Component({
   selector: 'app-homepage',
@@ -19,7 +21,7 @@ export class HomepageComponent implements OnInit {
   pagination: Pagination;
   userParams: UserParams;
 
-  constructor(public accountService: AccountService, private paletteService: PaletteService) {
+  constructor(public accountService: AccountService, private paletteService: PaletteService, public dialog: MatDialog) {
     this.userParams = this.paletteService.getUserParams();
   }
 
@@ -28,12 +30,10 @@ export class HomepageComponent implements OnInit {
     this.generateRandomPalette();
   }
 
-  registerToggle() {
-    this.registerMode = !this.registerMode;
-  }
-
-  cancelRegisterMode(event: boolean) {
-    this.registerMode = event;
+  openRegistrationModal(): void {
+    this.dialog.open(RegistrationDialogComponent, {
+      width: '320px',
+    });
   }
 
   handlePageEvent(event: PageEvent) {
