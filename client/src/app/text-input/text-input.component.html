@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field style="display: block;">
   <input matInput type={{type}} placeholder={{label}} [formControl]="ngControl.control"
     [class.is-invalid]="ngControl.touched && ngControl.invalid">
   <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">

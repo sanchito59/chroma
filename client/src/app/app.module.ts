@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 // MATERIAL
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu'; 
@@ -17,7 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 // COMPONENTS
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -27,6 +28,7 @@ import { PaletteDetailComponent } from './palette-detail/palette-detail.componen
 import { HomepageComponent } from './homepage/homepage.component';
 import { NewPaletteColorComponent } from './new-palette-color/new-palette-color.component';
 import { AppComponent } from './app.component';
+import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { AppComponent } from './app.component';
     PaletteCardComponent,
     PaletteDetailComponent,
     HomepageComponent,
-    NewPaletteColorComponent
+    NewPaletteColorComponent,
+    RegistrationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +60,14 @@ import { AppComponent } from './app.component';
     MatTooltipModule,
     ClipboardModule,
     MatPaginatorModule,
+    MatDialogModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
   ],
   bootstrap: [AppComponent]
 })
