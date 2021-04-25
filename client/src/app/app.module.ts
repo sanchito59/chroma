@@ -30,6 +30,7 @@ import { NewPaletteColorComponent } from './new-palette-color/new-palette-color.
 import { AppComponent } from './app.component';
 import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 import { HorizontalCopypasteComponent } from './palette-detail/components/horizontal-copypaste/horizontal-copypaste.component';
+import { VerticalColorDisplayComponent } from './palette-detail/components/vertical-color-display/vertical-color-display.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HorizontalCopypasteComponent } from './palette-detail/components/horizo
     HomepageComponent,
     NewPaletteColorComponent,
     RegistrationDialogComponent,
-    HorizontalCopypasteComponent
+    HorizontalCopypasteComponent,
+    VerticalColorDisplayComponent
   ],
   imports: [
     BrowserModule,
