@@ -1,5 +1,26 @@
 .vertical-color-bar {
-  height: 640px;
+  height: 480px;
   padding: 12px 0px 12px 8px;
   color: white;
+}
+
+.fade-in-up-name {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  opacity: 0;
+  transition: opacity 0.2s, bottom 0.3s;
+  position: absolute;
+  bottom: 0px;
+}
+
+.fade-in-up-name:hover {
+  opacity: 100%;
+  bottom: 16px;
+  cursor: pointer;
+}
+
+.fade-in-up-name:active {
+  bottom: 24px;
 }
