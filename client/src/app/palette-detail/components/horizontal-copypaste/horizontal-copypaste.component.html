@@ -1,0 +1,14 @@
+<mat-grid-list cols="2" rowHeight="48px">
+  <mat-grid-tile [style.background]="colorName"></mat-grid-tile>
+  <mat-grid-tile class="copy-item">
+    <div style="display: flex; justify-content: flex-end; width: 100%;">
+      <div [cdkCopyToClipboard]="colorName">
+        {{colorName}}
+        <button mat-icon-button color="primary" aria-label="Clickable icon to copy color to clipboard"
+          [cdkCopyToClipboard]="colorName">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

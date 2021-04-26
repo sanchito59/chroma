@@ -29,6 +29,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NewPaletteColorComponent } from './new-palette-color/new-palette-color.component';
 import { AppComponent } from './app.component';
 import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
+import { HorizontalCopypasteComponent } from './palette-detail/components/horizontal-copypaste/horizontal-copypaste.component';
+import { VerticalColorDisplayComponent } from './palette-detail/components/vertical-color-display/vertical-color-display.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { RegistrationDialogComponent } from './registration-dialog/registration-
     PaletteDetailComponent,
     HomepageComponent,
     NewPaletteColorComponent,
-    RegistrationDialogComponent
+    RegistrationDialogComponent,
+    HorizontalCopypasteComponent,
+    VerticalColorDisplayComponent
   ],
   imports: [
     BrowserModule,

@@ -1,34 +1,41 @@
-<h1>{{palette.title}}</h1>
-<h4 style="color: white; margin: 0px; padding: 12px 0px 12px 8px;" [style.background]="palette.color1">
-  {{palette.color1}}
-</h4>
-<h4 style="color: white; margin: 0px; padding: 12px 0px 12px 8px;" [style.background]="palette.color2">
-  {{palette.color2}}
-</h4>
-<h4 style="color: white; margin: 0px; padding: 12px 0px 12px 8px;" [style.background]="palette.color3">
-  {{palette.color3}}
-</h4>
-<h4 style="color: white; margin: 0px; padding: 12px 0px 12px 8px;" [style.background]="palette.color4">
-  {{palette.color4}}
-</h4>
-<h4 style="color: white; margin: 0px; padding: 12px 0px 12px 8px;" [style.background]="palette.color5">
-  {{palette.color5}}
-</h4>
+<mat-card>
+  <h1>{{palette.title}}</h1>
+  <mat-card style="margin-bottom: 40px; width: 70%;">
+    <app-horizontal-copypaste [colorName]="palette.color1"></app-horizontal-copypaste>
+    <app-horizontal-copypaste [colorName]="palette.color2"></app-horizontal-copypaste>
+    <app-horizontal-copypaste [colorName]="palette.color3"></app-horizontal-copypaste>
+    <app-horizontal-copypaste [colorName]="palette.color4"></app-horizontal-copypaste>
+    <app-horizontal-copypaste [colorName]="palette.color5"></app-horizontal-copypaste>
+  </mat-card>
 
-<div style="display: flex; margin-top: 40px;">
-  <h4 style="width: 20%; height: 100px; color: white; margin: 0px; padding: 12px 0px 12px 8px;"
-    [style.background]="palette.color1">
-  </h4>
-  <h4 style="width: 20%; height: 100px; color: white; margin: 0px; padding: 12px 0px 12px 8px;"
-    [style.background]="palette.color2">
-  </h4>
-  <h4 style="width: 20%; height: 100px; color: white; margin: 0px; padding: 12px 0px 12px 8px;"
-    [style.background]="palette.color3">
-  </h4>
-  <h4 style="width: 20%; height: 100px; color: white; margin: 0px; padding: 12px 0px 12px 8px;"
-    [style.background]="palette.color4">
-  </h4>
-  <h4 style="width: 20%; height: 100px; color: white; margin: 0px; padding: 12px 0px 12px 8px;"
-    [style.background]="palette.color5">
-  </h4>
-</div>
+  <!-- <h2>{{formattedDate}}</h2> -->
+
+  <mat-card>
+    <mat-grid-list cols="5" rowHeight="480px">
+      <mat-grid-tile>
+        <app-vertical-color-display style="width: 100%;" [colorName]="palette.color1">
+        </app-vertical-color-display>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <app-vertical-color-display style="width: 100%;" [colorName]="palette.color2">
+        </app-vertical-color-display>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <app-vertical-color-display style="width: 100%;" [colorName]="palette.color3">
+        </app-vertical-color-display>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <app-vertical-color-display style="width: 100%;" [colorName]="palette.color4">
+        </app-vertical-color-display>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <app-vertical-color-display style="width: 100%;" [colorName]="palette.color5">
+        </app-vertical-color-display>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+</mat-card>
