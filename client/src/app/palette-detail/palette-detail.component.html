@@ -10,8 +10,8 @@
 
   <!-- <h2>{{formattedDate}}</h2> -->
 
-  <mat-card>
-    <mat-grid-list cols="5" rowHeight="480px">
+  <mat-card style="margin-bottom: 40px;">
+    <mat-grid-list cols=" 5" rowHeight="480px">
       <mat-grid-tile>
         <app-vertical-color-display style="width: 100%;" [colorName]="palette.color1">
         </app-vertical-color-display>
@@ -37,5 +37,10 @@
         </app-vertical-color-display>
       </mat-grid-tile>
     </mat-grid-list>
+  </mat-card>
+
+  <mat-card>
+    <h1>Preview Palette</h1>
+    <app-palette-theme-display [palette]="palette"></app-palette-theme-display>
   </mat-card>
 </mat-card>

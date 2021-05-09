@@ -31,6 +31,9 @@ import { AppComponent } from './app.component';
 import { RegistrationDialogComponent } from './registration-dialog/registration-dialog.component';
 import { HorizontalCopypasteComponent } from './palette-detail/components/horizontal-copypaste/horizontal-copypaste.component';
 import { VerticalColorDisplayComponent } from './palette-detail/components/vertical-color-display/vertical-color-display.component';
+import { PaletteThemeDisplayComponent } from './palette-theme-display/palette-theme-display.component';
+import { DisplayHeaderComponent } from './palette-theme-display/components/display-header/display-header.component';
+import { DisplayPageComponent } from './palette-theme-display/components/display-page/display-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { VerticalColorDisplayComponent } from './palette-detail/components/verti
     NewPaletteColorComponent,
     RegistrationDialogComponent,
     HorizontalCopypasteComponent,
-    VerticalColorDisplayComponent
+    VerticalColorDisplayComponent,
+    PaletteThemeDisplayComponent,
+    DisplayHeaderComponent,
+    DisplayPageComponent
   ],
   imports: [
     BrowserModule,
