@@ -34,6 +34,7 @@ import { VerticalColorDisplayComponent } from './palette-detail/components/verti
 import { PaletteThemeDisplayComponent } from './palette-theme-display/palette-theme-display.component';
 import { DisplayHeaderComponent } from './palette-theme-display/components/display-header/display-header.component';
 import { DisplayPageComponent } from './palette-theme-display/components/display-page/display-page.component';
+import { DisplayMainBlurbComponent } from './palette-theme-display/components/display-main-blurb/display-main-blurb.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DisplayPageComponent } from './palette-theme-display/components/display
     VerticalColorDisplayComponent,
     PaletteThemeDisplayComponent,
     DisplayHeaderComponent,
-    DisplayPageComponent
+    DisplayPageComponent,
+    DisplayMainBlurbComponent
   ],
   imports: [
     BrowserModule,
