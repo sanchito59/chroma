@@ -37,6 +37,8 @@ import { DisplayPageComponent } from './palette-theme-display/components/display
 import { DisplayMainBlurbComponent } from './palette-theme-display/components/display-main-blurb/display-main-blurb.component';
 import { DisplayHeaderBannerComponent } from './palette-theme-display/components/display-header-banner/display-header-banner.component';
 import { DisplaySecondaryBlurbComponent } from './palette-theme-display/components/display-secondary-blurb/display-secondary-blurb.component';
+import { DisplayFooterComponent } from './palette-theme-display/components/display-footer/display-footer.component';
+import { DisplayFullwidthSectionComponent } from './palette-theme-display/components/display-fullwidth-section/display-fullwidth-section.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { DisplaySecondaryBlurbComponent } from './palette-theme-display/componen
     DisplayPageComponent,
     DisplayMainBlurbComponent,
     DisplayHeaderBannerComponent,
-    DisplaySecondaryBlurbComponent
+    DisplaySecondaryBlurbComponent,
+    DisplayFooterComponent,
+    DisplayFullwidthSectionComponent
   ],
   imports: [
     BrowserModule,
