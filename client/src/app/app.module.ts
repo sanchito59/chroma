@@ -35,6 +35,7 @@ import { PaletteThemeDisplayComponent } from './palette-theme-display/palette-th
 import { DisplayHeaderComponent } from './palette-theme-display/components/display-header/display-header.component';
 import { DisplayPageComponent } from './palette-theme-display/components/display-page/display-page.component';
 import { DisplayMainBlurbComponent } from './palette-theme-display/components/display-main-blurb/display-main-blurb.component';
+import { DisplayHeaderBannerComponent } from './palette-theme-display/components/display-header-banner/display-header-banner.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { DisplayMainBlurbComponent } from './palette-theme-display/components/di
     PaletteThemeDisplayComponent,
     DisplayHeaderComponent,
     DisplayPageComponent,
-    DisplayMainBlurbComponent
+    DisplayMainBlurbComponent,
+    DisplayHeaderBannerComponent
   ],
   imports: [
     BrowserModule,
