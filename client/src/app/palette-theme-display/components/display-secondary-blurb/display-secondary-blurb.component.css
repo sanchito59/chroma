@@ -1,0 +1,17 @@
+.content {
+  margin: 20px 10px 20px 100px;
+  padding: 20px;
+  border: 1px solid rgb(249, 242, 242);
+  border-radius: 4px;
+  width: 65%;
+  background: white;
+  box-shadow: 2.5px 5px 5px grey;
+  margin-top: -50px;
+  width: 45%;
+}
+
+.header-text {
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 12px;
+}

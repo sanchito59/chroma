@@ -1,0 +1,23 @@
+section {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+}
+
+#blurb-container {
+  padding-top: 70px;
+}
+
+.blurb {
+  font-weight: 400;
+  width: 40%;
+  margin-left: 40px;
+}
+
+#main-blurb {
+  font-size: 20px;
+}
+
+#secondary-blurb {
+  font-size: 16px;
+}
