@@ -1,0 +1,19 @@
+.nav-list {
+  display: flex;
+  padding: 8px;
+}
+
+.nav-item {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0px auto;
+  padding: 0px 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav-active {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+}

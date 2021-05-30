@@ -1,0 +1,48 @@
+.content {
+  margin: 20px 10px 20px 40px;
+  padding: 20px;
+  border: 1px solid rgb(249, 242, 242);
+  border-radius: 4px;
+  width: 65%;
+  background: white;
+  box-shadow: 2.5px 5px 5px grey;
+  margin-top: -50px;
+  width: 95%;
+}
+
+.header-text {
+  font-weight: 500;
+  font-size: 24px;
+  padding-bottom: 12px;
+}
+
+.avatar-container {
+  font-weight: 500;
+  padding-top: 40px;
+}
+
+.avatar-row {
+  display: flex;
+  padding-top: 4px;
+}
+
+.avatar, .avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+#avatar4 {
+  background: crimson;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
+
+#avatar5 {
+  background: rgb(221, 221, 221);
+  color: lightslategray;
+  text-align: center;
+  line-height: 40px;
+}

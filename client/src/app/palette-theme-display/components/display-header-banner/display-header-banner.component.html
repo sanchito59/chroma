@@ -1,0 +1,12 @@
+<section [style.background]="color" class="banner-content">
+  <div class="banner-text-primary" *ngIf="currentUser; else showGenericUser">
+    <p>Hello, {{currentUser.username}}</p>
+    <p class="banner-text-subheading">Welcome to your personalized dashboard.</p>
+  </div>
+  <ng-template #showGenericUser>
+    <div class="banner-text-primary">
+      <p>Hello, username</p>
+      <p class="banner-text-subheading">Welcome to your personalized dashboard.</p>
+    </div>
+  </ng-template>
+</section>
