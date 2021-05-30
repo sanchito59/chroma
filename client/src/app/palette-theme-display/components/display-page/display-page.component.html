@@ -1,5 +1,8 @@
 <div id="page-content">
   <app-display-header [color]="palette.color1"></app-display-header>
   <app-display-header-banner [color]="palette.color2"></app-display-header-banner>
-  <app-display-main-blurb [color]="palette.color2"></app-display-main-blurb>
+  <div style="display: flex;">
+    <app-display-main-blurb [color]="palette.color2"></app-display-main-blurb>
+    <app-display-secondary-blurb [color]="palette.color2"></app-display-secondary-blurb>
+  </div>
 </div>
